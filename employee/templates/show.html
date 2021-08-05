@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+ 
+  
+  </head>
+
+  <body>
+   
+    <center><div><h2 class="bg-primary text-white">List of Department</h2></div></center>
+    <form action="{% url 'searchde' %}" method="get">
+      <input type="text" name="searchs" placeholder="Enter Dept name to search"/>
+      <button type="submit">search</button> 
+    </form><center>  <form action="{% url 'sortade' %}"></form>
+      <button type="submit">sort assnt</button> </form>
+      <form action="{% url 'sortdde' %}" ></form>
+      <button type="submit">sort desc</button> </form>
+    </center>
+    <table class="table">
+      <thead class="bg-danger text-white">
+        <tr>
+          <th>Department Name</th>
+          <th>Email</th>
+          <th>phone</th>
+          
+         
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for department in departments %}
+        <tr>
+          <td>{{department.cName}}</td>
+          <td>{{department.cEmail}}</td>
+          <td>{{department.cPhone}}</td>
+          <td>
+          
+            <button class="btn-danger btn-sm" onclick="location.href='/delete/{{department.cName}}'">Delete</button>
+            <button class="btn-success btn-sm" onclick="location.href='/edit/{{department.cName}}'">Update</button>
+            <button class="btn-primary btn-sm" onclick="location.href='/emp'">Add Employee</button>
+
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

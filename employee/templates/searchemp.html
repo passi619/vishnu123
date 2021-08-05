@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    
+  </head>
+
+
+{%if employees %}
+
+
+<body>
+    
+   
+    <center><div><h2 class="bg-primary text-white">List of Employees</h2></div></center>
+    
+    
+    <table class="table" cellspacing="15">
+      <thead class="bg-danger text-white"  >
+        <tr >
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Department</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for employee in employees %}
+        <tr>
+          <td>{{employee.eFname}}</td>
+          <td>{{employee.eLname}}</td>
+          <td>{{employee.eDepartment}}</td>
+          <td>{{employee.eEmail}}</td>
+          <td>{{employee.ePhone}}</td>
+         
+    </tr>
+    
+{% endfor %}
+{% else %}
+<h1> NOT FOUND</h1>
+{% endif %}
+</tbody>
+</table>
+</body>
+

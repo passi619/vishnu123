@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Employee System</title>
+ 
+  </head>
+  <body>
+    <div>
+      <div class="booking-form3">
+          <h3 style="color: rgb(70, 48, 22);padding-top: 5%;">Update Employee Details</h3>
+    
+    <form method="POST" action="/updateEmp/{{employee.eFname}}" class="forma">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label class="form-label">First Name:</label>
+        
+        <input type="text" name="eFname" value="{{employee.eFname}}" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Last Name:</label>
+        
+        <input type="text" name="eLname" value="{{employee.eLname}}" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Department:</label>
+        <input type="text" name="eDepartment" value="{{employee.eDepartment}}" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Employee Email:</label>
+        <input type="text" name="eEmail" value="{{employee.eEmail}}" />
+      </div><br>
+
+      <div class="form-group">
+        <label class="form-label">Employee phone:</label>
+        <input type="text" name="ePhone" value="{{employee.ePhone}}" />
+      </div><br>
+
+      <button type="submit" class="btn-success">Submit</button>
+    </form>
+  </div></div>
+  </body>
+</html>
+{% endblock %}

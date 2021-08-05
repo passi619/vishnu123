@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    
+  </head>
+
+
+{% if departments %}
+
+
+<body>
+    
+   
+    <center><div><h2 class="bg-primary text-white">List of Department</h2></div></center>
+    <table class="table">
+      <thead class="bg-danger text-white">
+        <tr>
+          <th>Department Name</th>
+          <th>Email</th>
+          <th>phone</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for department in departments %}
+        <tr>
+          <td>{{department.cName}}</td>
+          <td>{{department.cEmail}}</td>
+          <td>{{department.cPhone}}</td>
+          
+    </tr>
+
+{% endfor %}
+{% else %}
+<h1> NOT FOUND</h1>
+{% endif %}
+</tbody>
+</table>
+</body>

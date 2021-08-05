@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Employee System</title>
+    
+  </head>
+  <body>
+      <div>
+    <div class="booking-form">
+        <h3 style="color: rgb(215, 8, 223);padding-top: 5%;">Add Department Details</h3>
+    <form method="POST" action="/dept" class="forma">
+      {% csrf_token %}
+
+      <div class="form-group form-input">
+        <label class="form-label">Department Name:</label>
+        <div>{{form.cName}}</div>
+     
+      </div>
+
+      <div class="form-group form-input">
+        <label class="form-label">Department Email</label>
+        <div>{{form.cEmail}}</div>
+        
+      </div>
+      <div class="form-group form-input">
+        <label class="form-label">Department phone:</label>
+        <div>{{form.cPhone}}</div>
+       
+      </div><br>
+      
+
+
+      <button type="submit" class="btn-success">Submit</button>
+    </form>
+</div>
+</div>
+  </body>
+</html>

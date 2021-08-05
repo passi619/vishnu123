@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    
+  </head>
+
+  <body>
+    
+    <center><div><h2 class="bg-primary text-white">List of Employees</h2></div></center>
+    <form action="{% url 'searchem' %}" method="get">
+      <input type="text" name="searchs" placeholder="Enter first name to search"/>
+      <button type="submit">search</button> 
+    </form><center>  <form action="{% url 'sorta' %}"></form>
+      <button type="submit">sort assnt</button> </form>
+      <form action="{% url 'sortd' %}" ></form>
+      <button type="submit">sort desc</button> </form>
+    </center>
+  
+    <table class="table" cellspacing="15">
+      <thead class="bg-danger text-white"  >
+        <tr >
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Department</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+          
+        {% for employee in list(employees[:1]) %}
+        <tr>
+          <td>{{employee.eFname}}</td>
+          <td>{{employee.eLname}}</td>
+          <td>{{employee.eDepartment}}</td>
+          <td>{{employee.eEmail}}</td>
+          <td>{{employee.ePhone}}</td>
+          <td>
+            
+            <button class="btn-danger btn-sm" onclick="location.href='/deleteEmp/{{employee.eFname}}'">Delete</button>
+            <button class="btn-success btn-sm" onclick="location.href='/editemp/{{employee.eFname}}'">Update</button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
