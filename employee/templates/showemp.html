@@ -12,11 +12,11 @@
     <form action="{% url 'searchem' %}" method="get">
       <input type="text" name="searchs" placeholder="Enter first name to search"/>
       <button type="submit">search</button> 
-    </form><center>  <form action="{% url 'sortaem' %}"></form>
+    </form><center>  <form action="{% url 'sorta' %}" method="get" >
       <button type="submit">sort assnt</button> </form>
-      <form action="{% url 'sortdem' %}" ></form>
-      <button type="submit">sort desc</button> </form>
-    </center>
+      <form action="{% url 'sortdem' %}" >
+        <button type="submit">sort desc</button> </form>
+      </center>
   
     <table class="table" cellspacing="15">
       <thead class="bg-danger text-white"  >

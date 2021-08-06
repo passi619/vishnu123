@@ -122,18 +122,20 @@ def updateEmp(request, eFname):
     return render(request, "editemployee.html", {'employee': employee})
 
 
-def sortaem(request):
-    employees = Employee.objects.all().order_by('-id')
-    return render(request, "sorta.html", {'employees':employees})
+def sorta(request):
+    
+    employees = Employee.objects.all().order_by('eFname')
+    return render(request, "sortaem.html", {'employees':employees})
 
 def sortdem(request):
     employees = Employee.objects.all().order_by('-eFname')
-    return render(request, "showemp.html", {'employees':employees})
+    return render(request, "sortaem.html", {'employees':employees})
 
 def sortade(request):
     departments=Department.objects.all().order_by('cName')
-    return render(request, "show.html", {'departments':departments})
+    return render(request, "sortd.html", {'departments':departments})
 
 def sortdde(request):
     departments=Department.objects.all().order_by('-cName')
-    return render(request, "show.html", {'departments':departments})
+    return render(request, "sortd.html", {'departments':departments})
+    
